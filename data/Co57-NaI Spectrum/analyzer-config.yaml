@@ -1,0 +1,10 @@
+# configuration given to https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks.html, sorted by channel
+peak_config1:
+  prominence: 200
+  width: 10
+  gradient_min: 0
+
+peak_config2:
+  prominence: 200
+  width: 10
+  gradient_min: 0

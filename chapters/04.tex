@@ -1,6 +1,45 @@
 \chapter{Auswertung, Fehlerrechnung und Diskussion der Messergebnisse}
 \section{Energiekalibration}
-In der ersten Aufgabe wurde eine Energiekalibrierung des Detektors durchgeführt, um einen Zusammenhang zwischen Kanalnummern und den tatsächlichen Energien der detektierten Photonen herzustellen. Hierzu wurden bekannte $\gamma$-Peaks der Referenzquellen $^{22}$Na, $^{57}$Co und $^{137}$Cs verwendet. Die Positionen dieser Peaks im Spektrum wurden jeweils durch Fitten mit einer Gaußfunktion bestimmt.
+In der ersten Aufgabe wurde eine Energiekalibrierung des Detektors durchgeführt, um einen Zusammenhang zwischen Kanalnummern und den tatsächlichen Energien der detektierten Photonen herzustellen. Hierzu wurden bekannte $\gamma$-Peaks der Referenzquellen $^{22}$Na, $^{57}$Co und $^{137}$Cs verwendet. Die Positionen dieser Peaks im Spektrum wurden jeweils durch Fitten mit einer Gaußfunktion bestimmt. Die Fits sind in \autoref{fig:Ge_calibration_fits} (Ge Detektor) bzw \autoref{fig:NaI_calibration_fits} (NaI Detektor) dargestellt.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/Ge_calibration_Co57.png}
+    \end{minipage}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/Ge_calibration_Cs137.png}
+    \end{minipage}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/Ge_calibration_Na22 (1).png}
+    \end{minipage}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/Ge_calibration_Na22 (2).png}
+    \end{minipage}
+    \caption{Kalibrierungsfits des Ge Detektors}
+    \label{fig:Ge_calibration_fits}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/NaI_calibration_Co57.png}
+    \end{minipage}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/NaI_calibration_Cs137.png}
+    \end{minipage}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/NaI_calibration_Na22 (1).png}
+    \end{minipage}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/NaI_calibration_Na22 (2).png}
+    \end{minipage}
+    \caption{Kalibrierungsfits des NaI Detektors}
+    \label{fig:NaI_calibration_fits}
+\end{figure}
+
 
 \begin{table}[H]
 \centering
@@ -16,7 +55,21 @@ $^{57}$Co     & 122      & ...  & ... \\
 \end{table}
 
 
-Anschließend wurden die gemessenen Kanalpositionen der Peaks den entsprechenden Literaturwerten der $\gamma$-Energien zugeordnet. Aus diesen Datenpunkten wurde ein linearer Fit durchgeführt, der die Kalibrierfunktion beschreibt. Diese liefert die Parameter des linearen Zusammenhangs zwischen Kanalnummer $K$ und Energie $E$:
+Anschließend wurden die gemessenen Kanalpositionen der Peaks den entsprechenden Literaturwerten der $\gamma$-Energien zugeordnet. Aus diesen Datenpunkten wurde ein linearer Fit durchgeführt, der die Kalibrierfunktion beschreibt. 
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/NaI_calibration.png}
+    \end{minipage}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/Ge_calibration.png}
+    \end{minipage}
+    \caption{Linearer Zusammnehang zwischen Kanal und Energie beider Detektoren}
+    \label{fig:NaI_calibration_fits}
+\end{figure}
+
+Diese liefert die Parameter des linearen Zusammenhangs zwischen Kanalnummer $K$ und Energie $E$:
 
 \[
 E_{NaJ} = (0,0\pm 0,0) \,\frac{\text{keV}}{\text{Kanal}}\cdot K + (0,0\pm 0,0) \,\text{keV}
@@ -29,6 +82,20 @@ E_{Ge} = (0,0\pm 0,0) \,\frac{\text{keV}}{\text{Kanal}}\cdot K + (0,0\pm 0,0) \,
 Die so erhaltene Kalibrierfunktion ermöglicht es, künftig aus der gemessenen Kanalnummer eines Peaks auf die zugehörige Photonenenergie zu schließen.
 
 \section{Co60-Spektrum}
+Das aufgenommene Co60-Spektrum ist in \autoref{fig:Co60_spectrum} zu sehen.
+
+\begin{figure}
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/Co60_spec_Ge_energy.png}
+    \end{minipage}
+        \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/Co60_spec_NaI_energy.png}
+    \end{minipage}
+    \caption{Co60 Spektrum mit den Ge und NaI Detektoren}
+    \label{fig:Co60_spectrum}
+\end{figure}
+
 
 \begin{table}[H]
 \centering

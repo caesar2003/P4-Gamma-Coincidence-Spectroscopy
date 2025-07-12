@@ -1,1 +1,51 @@
 \chapter{Auswertung, Fehlerrechnung und Diskussion der Messergebnisse}
+\section{Energiekalibration}
+In der ersten Aufgabe wurde eine Energiekalibrierung des Detektors durchgeführt, um einen Zusammenhang zwischen Kanalnummern und den tatsächlichen Energien der detektierten Photonen herzustellen. Hierzu wurden bekannte $\gamma$-Peaks der Referenzquellen $^{22}$Na, $^{57}$Co und $^{137}$Cs verwendet. Die Positionen dieser Peaks im Spektrum wurden jeweils durch Fitten mit einer Gaußfunktion bestimmt.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c}
+Probe & Energie in keV & Kanal (NaI) & Kanal (Ge) \\
+\hline
+$^{22}$Na     & 511      & ...  & ... \\
+$^{22}$Na     & 1275     & ...  & ... \\
+$^{137}$Cs    & 662      & ...  & ... \\
+$^{57}$Co     & 122      & ...  & ... \\
+\end{tabular}
+\caption{Literaturwerte der $\gamma$-Energien und gemessene Kanalnummern der bekannten Peaks.}
+\end{table}
+
+
+Anschließend wurden die gemessenen Kanalpositionen der Peaks den entsprechenden Literaturwerten der $\gamma$-Energien zugeordnet. Aus diesen Datenpunkten wurde ein linearer Fit durchgeführt, der die Kalibrierfunktion beschreibt. Diese liefert die Parameter des linearen Zusammenhangs zwischen Kanalnummer $K$ und Energie $E$:
+
+\[
+E_{NaJ} = (0,0\pm 0,0) \,\frac{\text{keV}}{\text{Kanal}}\cdot K + (0,0\pm 0,0) \,\text{keV}
+\]
+
+\[
+E_{Ge} = (0,0\pm 0,0) \,\frac{\text{keV}}{\text{Kanal}}\cdot K + (0,0\pm 0,0) \,\text{keV}
+\]
+
+Die so erhaltene Kalibrierfunktion ermöglicht es, künftig aus der gemessenen Kanalnummer eines Peaks auf die zugehörige Photonenenergie zu schließen.
+
+\section{Co60-Spektrum}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c}
+Peak & Energie in keV (NaJ) & Energie in keV (Ge) \\
+\hline
+Rückstreupeak 1   & ...      & ...   \\
+Rückstreupeak 2    & ...     & ...   \\
+Comptonkante 1    & ...    & ...  \\
+Comptonkante 2    & ...      & ...   \\
+Photopeak 1   &...      & ...   \\
+Photopeak 2   & ...     & ...   \\
+\end{tabular}
+\caption{Energien für Rückstreu -und Photopeaks, sowie Comptonkante für beide Detektoren}
+\end{table}
+
+
+
+
+\section{Koinzidenzanalyse}

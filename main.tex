@@ -2,6 +2,7 @@
 
 % Festlegung des Dokumenttyps und Import von Paketen, die üblicherweise benötigt werden.
 \documentclass[11pt]{scrreprt}
+\usepackage{float}
 \usepackage[left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
@@ -40,7 +41,8 @@
 %---------------------------------------------%
 
 %--------Inhaltsverzeichnis, Tabellen- und Abbildungsverzeichnis----------%
-\setcounter{secnumdepth} {5} 
+\setcounter{secnumdepth}{3} 
+\setcounter{tocdepth}{3}
 \tableofcontents % Erstellt ein Inhaltsverzeichnis
 %\vspace{50px}   
 %\listoffigures  % Erstellt ein Abbildungsverzeichnis. Dies wird von manchen Tutor*innen gefordert.

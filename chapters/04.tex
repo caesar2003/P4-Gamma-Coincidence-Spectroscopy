@@ -96,7 +96,111 @@ Das aufgenommene Co60-Spektrum ist in \autoref{fig:Co60_spectrum} zu sehen. Es i
     \label{fig:Co60_spectrum}
 \end{figure}
 
-\include{include/energy_spectrum}
-Es ist 
+\include{include/energy_table}
+Es ist in \autoref{tab:energy-calibration} zu erkennen, dass beide Detektoren ungefähr die gleichen Energien für die selben Ereignisse aufweisen, wobei jedoch manche Abweichungen etwas größer als $1 \sigma$ sind.
 
 \section{Koinzidenzanalyse}
+Bei der Koinzidenzanalyse sollen diese Events herausgefiltert werden, bei welchen (fast) gleichzeitig zwei $\gamma$-Photonen in den beiden Detektoren detektiert wurden. Diese müssen noch die kombinierte richtige Energie aufweisen, damit sicher gegangen werden kann, dass beide detektierten Photonen aus dem selben Zerfall kommen. Dies liegt daran, dass der erste Zerfall von Co60 nicht die gleiche Energie wie der zweite Zerfall hat (vgl. \autoref{fig:decay_co60}). Der Zwischenzustand ist metastabil und zerfällt sehr schnell wieder, weshalb es so aussieht, als würden beide Photonen gleichzeit auftreten und nicht kurz hintereinander.\n
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{include/Co60_decay_scheme.png}
+    \caption{Zerfallsschema Co60}
+    \label{fig:decay_co60}
+\end{figure}
+
+Es werden zunächst alle Events aussortiert, bei denen kein Photonen in jedem einzelnen Detektor kurz hintereinander detektiert wurden.
+In \autoref{fig:coincidence_co60} sind für jedes solches Event auf der x-Achse die Energie des Photons, das in dem NaI Detektor detektiert wurde, bzw. auf der y-Achse die Energie des Photons im Ge-Detektor aufgetragen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{include/coincidence_Co60.png}
+    \caption{Koinzidenzplot Co60}
+    \label{fig:coincidence_co60}
+\end{figure}
+Der relevante Bereich ist jener, in denen sich die roten Linien schneiden. Die roten Linien begrenzen mit $\pm 1 \sigma$ die Energie der Photopeaks. Eine Nahaufnaheme dieses Bereiches ist in \autoref{fig:coincidence_co60_closeup} zu sehen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{include/coincidence_Co60_closeup.png}
+    \caption{Koinzidenzplot Co60 closeup}
+    \label{fig:coincidence_co60_closeup}
+\end{figure}
+Der Bereich oben links und unten rechts sind die relevanten Bereiche, in denen jeweils ein Photon mit der Energie des 1. Photopeaks und ein Photon mit der Energie des 2. Photopeaks detektiert wurde.
+
+Die Anzahl der Events in den Bereichen sind folgende:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Anzahl der Koinzidenzen} & \textbf{NaI-1} & \textbf{NaI-2} \\
+\hline
+Ge-2 & 688 ($N_2$) & 434 ($N_4$) \\
+Ge-1 & 765 ($N_1$)  & 729 ($N_3$) \\
+\hline
+\end{tabular}
+\caption{Koinzidenzanzahlen in den vier Bereichen um die jeweiligen Photopeaks.}
+\label{tab:coincidences}
+\end{table}
+
+Zur Untersuchung, ob der beobachtete Zerfall korreliert oder unkorreliert erfolgt, formulieren wir ein einfaches Mischmodell. Dabei wird angenommen, dass die beobachtete Anzahl der Koinzidenzen $N_i$ in den vier Fenstern als Mischung aus einem vollständig korrelierten und einem vollständig unkorrelierten Zerfall beschrieben werden kann. Die erwartete Anzahl an Ereignissen im $i$-ten Fenster ergibt sich dabei zu:
+
+\[
+N_i^m(p) = p N_i^k + (1-p) N_i^u
+\]
+
+Hierbei bezeichnet $p \in [0,1]$ den Korrelationsgrad, $N_i^k$ die erwartete Anzahl bei vollkommener Korrelation und $N_i^u$ bei vollkommener Unkorrelation. Für diese beiden Extremfälle gelten:
+
+\[
+N_i^k = \frac{N_{\text{ges}}}{2}=N_2^k=N_3^k\ \text{und}\ N_1^k=N_4^k =0
+\]
+\[
+N_i^u = \frac{N_{\text{ges}}}{4}=N_1^u=N_2^u=N_3^u=N_4^u \quad \text{(gleichmäßige Verteilung)}
+\]
+
+Zur Bestimmung des optimalen Parameters $p$ wird ein $\chi^2$-Test durchgeführt.
+
+\[
+\chi^2(p) = \sum_{i=1}^4 \frac{(N_i - N_i^m(p))^2}{N_i^m(p)}
+\]
+
+Durch Minimierung von $\chi^2(p)$ hat sich der Korrelationsgrad $p$ zu 6,5\% bestimmt, was bedeutet, dass nur 6,5\% der Zerfälle kaskadisch ablaufen. Dies sollte durch das Vorwissen durch die Versuchsvorbereitung eigentlich nicht der Fall sein, da der Zerfall von $^{60}Co$ eindeutig kaskadisch dominant ist. Schon der Scatter-Plot ist nicht zufriedenstellend mit dem zu erwartenden Ergebnis, da in $N_2$ und $N_3$ deutlich mehr Koinzidenzen auftreten sollten als in $N_1$ und $N_4$.
+
+
+\section{Energieauflösung}
+
+Zur Untersuchung der Energieauflösung des Detektors geht man davon aus, dass diese invers zur Wurzel der Energie skaliert:
+
+\[
+\frac{\Delta E}{E} \propto \frac{1}{\sqrt{E}}
+\]
+
+Um zu überprüfen, ob zumindest eine lineare Beziehung vorliegt, wird folgende Modellannahme getroffen:
+
+\[
+\frac{\Delta E}{E} = m \cdot \frac{1}{\sqrt{E}} + d
+\]
+
+Hierbei ist $\Delta E$ die Energiebreite, die sich aus der Standardabweichung $\sigma$ der gefitteten Gaußverteilungen berechnen lässt. Diese ergibt sich durch:
+
+\[
+\Delta E = 2\sqrt{2 \cdot \ln(2)} \cdot \sigma
+\]
+
+Trägt man nun $\frac{\Delta E}{E}$ gegen $\frac{1}{\sqrt{E}}$ auf, so lässt sich mit den Messwerten der Photopeaks eine lineare Regression durchführen, um die Steigung $m$ und den y-Achsenabschnitt $d$ zu bestimmen.
+Für den Germanium Detektor ergaben sich folgende Parameter:
+\[
+m_{Ge} = 0,81 
+\]
+\[
+d_{Ge} = -0,02
+\]
+Für den NaI-Detektor ergaben sich folgende Parameter:
+\[
+m_{NaI} = 13,53 
+\]
+\[
+d_{NaI} = -0,37
+\]
+Die Energieauflösung des Ge-Detektors ist somit circa um einen Faktor $\frac{m_{NaI}}{m_{Ge}} \approx 16 $ besser als die des NaI-Detektors.

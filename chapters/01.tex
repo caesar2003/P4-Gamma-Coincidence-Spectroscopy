@@ -1,7 +1,56 @@
 \chapter{Ziel des Versuchs, Theoretische Grundlagen}
 \section{Gammastrahlen}
+
+Gammastrahlung besteht aus hochenergetischen Photonen, die beim radioaktiven Zerfall entstehen, insbesondere, wenn ein Atomkern nach einem Alpha- oder Beta-Zerfall zunächst in einem angeregten Zustand verbleibt. Der Übergang in den Grundzustand erfolgt durch Emission von Gamma-Quanten. Auch bei der Annihilation von Elektron und Positron entsteht Gammastrahlung, hier als Annihilationsstrahlung bezeichnet. Gammastrahlung besitzt typischerweise Energien über 300\,keV. Im Versuch wird das Gamma-Spektrum der Nuklide \textsuperscript{22}Na, \textsuperscript{137}Cs, \textsuperscript{57}Co und \textsuperscript{60}Co untersucht.
+
 \subsection{Wechselwirkung}
+Bei der Wechselwirkung von Gammastrahlung mit Materie lassen sich fundamental drei verschiedene Wechselwirkungsarten unterscheiden, die von der Kernladungszahl Z und der Gammaenergie $E_{\gamma}$ abhängig dominant sind.
+\begin{itemize}
+    \item Photoeffekt (große Ordnungzahl Z, niedrige Photonenenergie)
+    \item Compton-Streuung (niedrige bis mittlere Ordnungszahl Z, mittlere Photonenenrgie)
+    \item Paar-Bildung (große Ordnungszahl Z, große Photonenergien)
+\end{itemize}
 \subsubsection{Photoeffekt}
+
+Beim Photoeffekt wird ein Gammaquant vollständig von einem gebundenen Elektron absorbiert, typischerweise aus einer inneren Schale (z.\,B. K-Schale). Die Energie des Photons muss dabei größer als die Bindungsenergie des Elektrons sein. Das Elektron wird aus dem Atom gelöst und erhält eine kinetische Energie von
+
+\[
+E_\text{kin} = E_\gamma - E_\text{B},
+\]
+
+wobei \( E_\gamma \) die Energie des Photons und \( E_\text{B} \) die Bindungsenergie des Elektrons ist. Aufgrund der Impulserhaltung erfolgt die Wechselwirkung nicht mit freien Elektronen, sondern stets mit dem Atom als Ganzem.
+
+Die entstandene Lücke in der inneren Schale wird durch ein Elektron aus einer höheren Schale aufgefüllt. Dabei wird charakteristische Röntgenstrahlung emittiert.
+
+Der Photoeffekt ist vor allem bei niedrigen Photonenergien (\( E_\gamma \lesssim 100\,\text{keV} \)) und hohen Ordnungszahlen \( Z \) relevant. Der Wirkungsquerschnitt steigt stark mit \( Z \) und fällt mit zunehmender Photonenenergie:
+
+\[
+\sigma \propto Z^n \cdot E_\gamma^{-3{,}5} \quad \text{mit } n \approx 4\text{–}5.
+\]
+
+Im Gammaspektrum äußert sich der Photoeffekt durch den sogenannten Photopeak, der der vollen Photonenergie entspricht.
+
 \subsubsection{Compton-Streuung}
+
+Beim Compton-Effekt stößt ein Gammaquant elastisch mit einem schwach gebundenen Elektron und überträgt einen Teil seiner Energie und seines Impulses. Das Photon wird dabei um den Winkel \( \theta \) gestreut und besitzt danach eine geringere Energie:
+
+\[
+E'_\gamma = \frac{E_\gamma}{1 + \frac{E_\gamma}{E_0}(1 - \cos\theta)}, \quad E_\text{e} = E_\gamma - E'_\gamma,
+\]
+
+mit der Elektronenruheenergie \( E_0 = 511\,\text{keV} \). Die maximale Energieübertragung erfolgt bei Rückstreuung (\( \theta = \pi \)) und führt zur sogenannten Comptonkante im Spektrum.
+
+Der Effekt tritt bevorzugt bei mittleren Gammaenergien auf und führt zu einem kontinuierlichen Energiespektrum. Der Wirkungsquerschnitt ist proportional zur Ordnungszahl \( Z \) und nimmt mit steigender Photonenenergie ab.
+
 \subsubsection{Paar-Bildung}
+
+
+Paarbildung tritt auf, wenn die Photonenenergie \( E_\gamma \geq 1{,}022\,\text{MeV} \) beträgt, also mindestens der doppelten Ruheenergie eines Elektrons. Im Coulombfeld eines Kerns wird das Photon dabei vollständig in ein Elektron-Positron-Paar umgewandelt. Überschüssige Energie wird als kinetische Energie auf beide Teilchen verteilt.
+
+Das Positron annihiliert nach kurzer Zeit mit einem Elektron und erzeugt dabei zwei Photonen mit je \( 511\,\text{keV} \). Der Effekt tritt bevorzugt bei hohen Photonenergien und hohen Kernladungszahlen auf, mit einem Wirkungsquerschnitt \( \sigma \sim \sqrt{Z} \).
+
 \section{Detektor}
+In diesem Versuch werden zwei Detektoren zur Energiemessung verwendet. Der eine ist ein NaI-Szintillator, der andere ein Ge-Halbleiterzähler. 
+Der NaI-Szintillator misst die Energie von energetischen Photonen oder Elektronen, indem das Photon bzw. Elektron immer bestimmte Gitteranregungen erzeugt, welche dann in ein Photon mit immer der gleichen Wellenlänge 'zerfallen'. Diese Photonen können mit einer Photokathode und einem Multiplier in einen messbaren Strom umgewandelt werden. Die größe des Stroms ist dann eine Aussage über die Energie des ursprünglichen Teilchens (hier ein $\gamma$-Quant). 
+Ein Halbleiterzähler funktioniert anders. Dieser ist im Wesentlichen eine Diode, an der eine Spannung in Sperrichtung anliegt. Durch ein hochenergetisches Teilchen werden in der Sperrschicht freie Ladungsträger erzeugt, welche zu den freien Elektroden wandern und dort als Strom gemessen werden. Dieser Strom lässt sich auch wieder in eine Energie des ursprünglichen Teilchens übersetzen. 
+Der Germanium weißt eine wesentlich bessere energetische Auflösung auf.

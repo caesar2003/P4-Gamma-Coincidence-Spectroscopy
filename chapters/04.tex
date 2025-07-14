@@ -165,7 +165,8 @@ Zur Bestimmung des optimalen Parameters $p$ wird ein $\chi^2$-Test durchgeführt
 \chi^2(p) = \sum_{i=1}^4 \frac{(N_i - N_i^m(p))^2}{N_i^m(p)}
 \]
 
-Durch Minimierung von $\chi^2(p)$ hat sich der Korrelationsgrad $p$ zu 6,5\% bestimmt, was bedeutet, dass nur 6,5\% der Zerfälle kaskadisch ablaufen. Dies sollte durch das Vorwissen durch die Versuchsvorbereitung eigentlich nicht der Fall sein, da der Zerfall von $^{60}Co$ eindeutig kaskadisch dominant ist. Schon der Scatter-Plot ist nicht zufriedenstellend mit dem zu erwartenden Ergebnis, da in $N_2$ und $N_3$ deutlich mehr Koinzidenzen auftreten sollten als in $N_1$ und $N_4$.
+Durch Minimierung von $\chi^2(p)$ hat sich der Korrelationsgrad $p$ zu 6,5\% bestimmt, was bedeutet, dass nur 6,5\% der Zerfälle kaskadisch ablaufen. Dies sollte durch das Vorwissen durch die Versuchsvorbereitung eigentlich nicht der Fall sein, da der Zerfall von $^{60}\text{Co}$ eindeutig kaskadisch dominant ist. Schon der Scatter-Plot ist nicht zufriedenstellend mit dem zu erwartenden Ergebnis, da in $N_2$ und $N_3$ deutlich mehr Koinzidenzen auftreten sollten als in $N_1$ und $N_4$. Mögliche Ursachen für das unerwartete Ergebnis könnten eine unzureichende Trennung der Koinzidenzfenster oder eine ungenügende Energieauflösung der Detektoren sein, wodurch echte Koinzidenzen außerhalb der definierten Bereiche registriert wurden. Auch zeitliche Ungenauigkeiten im Koinzidenzmodul oder Untergrundereignisse könnten das Ergebnis verfälscht haben.
+
 
 
 \section{Energieauflösung}
@@ -189,7 +190,20 @@ Hierbei ist $\Delta E$ die Energiebreite, die sich aus der Standardabweichung $\
 \]
 
 Trägt man nun $\frac{\Delta E}{E}$ gegen $\frac{1}{\sqrt{E}}$ auf, so lässt sich mit den Messwerten der Photopeaks eine lineare Regression durchführen, um die Steigung $m$ und den y-Achsenabschnitt $d$ zu bestimmen.
-Für den Germanium Detektor ergaben sich folgende Parameter:
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/Energieauflösung_Ge.png}
+    \end{minipage}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/Energieauflösung_NaI.png}
+    \end{minipage}
+    \caption{lineare Fits für die Energieauflösung des Ge- und NaI-Detektors}
+    \label{fig:energieauflösung}
+\end{figure}
+
+Für den Germanium-Detektor ergaben sich folgende Parameter:
 \[
 m_{Ge} = 0,81 
 \]

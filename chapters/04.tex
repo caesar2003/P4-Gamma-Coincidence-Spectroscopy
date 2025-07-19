@@ -101,13 +101,25 @@ Das aufgenommene Co60-Spektrum ist in \autoref{fig:Co60_spectrum} zu sehen. Es i
     \label{fig:Co60_spectrum}
 \end{figure}
 
-\include{include/energy_table}
-Es ist in \autoref{tab:energy-calibration} zu erkennen, dass beide Detektoren ungefähr die gleichen Energien für die selben Ereignisse aufweisen, wobei jedoch manche Abweichungen etwas größer als $1 \sigma$ sind.
+\input{include/energy_table}
+Es ist in \autoref{tab:energy-calibration} zu erkennen, dass beide Detektoren ungefähr die gleichen Energien für die selben Ereignisse aufweisen, wobei jedoch manche Abweichungen etwas größer als $1 \sigma$ sind. Für die Photo- und Rückstreupeaks wurde jeweils eine Gaußfunktion, für die Comptonkante eine Errorfunktion angepasst, wie sie auch im Versuch P2 „Gammaspektroskopie“ verwendet wurde:
+\[
+f_{CE}(x) = A \cdot \operatorname{erfc}\left( \frac{x - \mu}{\sqrt{2} \, \sigma} \right) \cdot \left( 1 + B \cdot \left( \frac{x}{\mu} - 0{,}5 \right)^2 \right) + \text{baseline}
+\]
+Die Unsicherheiten ergeben sich jeweils aus dem Parameter \(\sigma\) der angepassten Funktion und entsprechen der Standardabweichung. Die Literarturwerte \cite{Ordner} für die Photoenergien für $^{60}$Co sind $E_{Ph1} = 1173\, \text{keV}$ und $E_{Ph2} = 1332\, \text{keV}$. Die Literaturwerte für die Comptonkanten ergeben sich aus der Formel für die Comptonstreuung für Rückstreuung ($\theta = 180\degree$).
+\[
+E_{\gamma'} = \frac{E_\gamma}{1 + \frac{E_\gamma}{m_e c^2} (1 - \cos\theta)}
+\]
+$E_{\gamma'}$ ist hier die Energie, die das Gamma-Quant nach dem Streuprozess besitzt und folglich ist die Energie des Elektrons folgende:
+\[
+\Rightarrow E_{CE} = E_{\gamma} - E_{\gamma'}
+\]
+Die berechneten Literarturwerte \cite{Ordner} für die Comptonkantenenergien für $^{60}$Co sind $E_{CE1} = 963\, \text{keV}$ und $E_{CE2} = 1118\, \text{keV}$. Die Energiewerte für die Rückstreupeaks entsprechen $E_{\gamma'}$ und sind daher $E_{RP1} = 210\, \text{keV}$ und $E_{RP2} = 214\, \text{keV}$.
 
 \section{Koinzidenzanalyse}
-Bei der Koinzidenzanalyse sollen diese Events herausgefiltert werden, bei welchen (fast) gleichzeitig zwei $\gamma$-Photonen in den beiden Detektoren detektiert wurden. Diese müssen noch die kombinierte richtige Energie aufweisen, damit sicher gegangen werden kann, dass beide detektierten Photonen aus dem selben Zerfall kommen. Dies liegt daran, dass der erste Zerfall von Co60 nicht die gleiche Energie wie der zweite Zerfall hat (vgl. \autoref{fig:decay_co60}). Der Zwischenzustand ist metastabil und zerfällt sehr schnell wieder, weshalb es so aussieht, als würden beide Photonen gleichzeit auftreten und nicht kurz hintereinander.\n
+Bei der Koinzidenzanalyse sollen diese Events herausgefiltert werden, bei welchen (fast) gleichzeitig zwei $\gamma$-Photonen in den beiden Detektoren detektiert wurden. Diese müssen noch die kombinierte richtige Energie aufweisen, damit sicher gegangen werden kann, dass beide detektierten Photonen aus dem selben Zerfall kommen. Dies liegt daran, dass der erste Zerfall von Co60 nicht die gleiche Energie wie der zweite Zerfall hat (vgl. \autoref{fig:decay_co60}). Der Zwischenzustand ist metastabil und zerfällt sehr schnell wieder, weshalb es so aussieht, als würden beide Photonen gleichzeit auftreten und nicht kurz hintereinander.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{include/Co60_decay_scheme.png}
     \caption{Zerfallsschema Co60}

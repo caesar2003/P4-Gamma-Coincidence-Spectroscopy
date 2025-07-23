@@ -114,7 +114,7 @@ $E_{\gamma'}$ ist hier die Energie, die das Gamma-Quant nach dem Streuprozess be
 \[
 \Rightarrow E_{CE} = E_{\gamma} - E_{\gamma'}
 \]
-Die berechneten Literarturwerte \cite{Ordner} für die Comptonkantenenergien für $^{60}$Co sind $E_{CE1} = 963\, \text{keV}$ und $E_{CE2} = 1118\, \text{keV}$. Die Energiewerte für die Rückstreupeaks entsprechen $E_{\gamma'}$ und sind daher $E_{RP1} = 210\, \text{keV}$ und $E_{RP2} = 214\, \text{keV}$.
+Die berechneten Literarturwerte \cite{Ordner} für die Comptonkantenenergien für $^{60}$Co sind $E_{CE1} = 963\, \text{keV}$ und $E_{CE2} = 1118\, \text{keV}$. Die Energiewerte für die Rückstreupeaks entsprechen $E_{\gamma'}$ und sind daher $E_{RP1} = 210\, \text{keV}$ und $E_{RP2} = 214\, \text{keV}$. Die gemessenen Photopeak-Energien stimmen beim Ge-Detektor sehr gut mit den Literaturwerten überein. Beim NaI-Detektor liegen sie leicht zu hoch, was durch die geringere Energieauflösung erklärbar ist. Die Comptonkanten weichen ebenfalls nur geringfügig ab und sind insgesamt konsistent mit den theoretisch erwarteten Werten. Die Rückstreupeaks liegen im erwarteten Bereich um 210–214 keV; der zweite Rückstreupeak konnte aufgrund der begrenzten Auflösung nicht getrennt nachgewiesen werden.
 
 \section{Koinzidenzanalyse}
 Bei der Koinzidenzanalyse sollen diese Events herausgefiltert werden, bei welchen (fast) gleichzeitig zwei $\gamma$-Photonen in den beiden Detektoren detektiert wurden. Diese müssen noch die kombinierte richtige Energie aufweisen, damit sicher gegangen werden kann, dass beide detektierten Photonen aus dem selben Zerfall kommen. Dies liegt daran, dass der erste Zerfall von Co60 nicht die gleiche Energie wie der zweite Zerfall hat (vgl. \autoref{fig:decay_co60}). Der Zwischenzustand ist metastabil und zerfällt sehr schnell wieder, weshalb es so aussieht, als würden beide Photonen gleichzeit auftreten und nicht kurz hintereinander.
@@ -183,6 +183,19 @@ Zur Bestimmung des optimalen Parameters $p$ wird ein $\chi^2$-Test durchgeführt
 \]
 
 Durch Minimierung von $\chi^2(p)$ hat sich der Korrelationsgrad $p$ zu 6,5\% bestimmt, was bedeutet, dass nur 6,5\% der Zerfälle kaskadisch ablaufen. Dies sollte durch das Vorwissen durch die Versuchsvorbereitung eigentlich nicht der Fall sein, da der Zerfall von $^{60}\text{Co}$ eindeutig kaskadisch dominant ist. Schon der Scatter-Plot ist nicht zufriedenstellend mit dem zu erwartenden Ergebnis, da in $N_2$ und $N_3$ deutlich mehr Koinzidenzen auftreten sollten als in $N_1$ und $N_4$. Mögliche Ursachen für das unerwartete Ergebnis könnten eine unzureichende Trennung der Koinzidenzfenster oder eine ungenügende Energieauflösung der Detektoren sein, wodurch echte Koinzidenzen außerhalb der definierten Bereiche registriert wurden. Auch zeitliche Ungenauigkeiten im Koinzidenzmodul oder Untergrundereignisse könnten das Ergebnis verfälscht haben.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/NaI_calibration.png}
+    \end{minipage}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{include/Ge_calibration.png}
+    \end{minipage}
+    \caption{Linearer Zusammnehang zwischen Kanal und Energie beider Detektoren}
+    \label{fig:NaI_calibration_fits}
+\end{figure}
 
 
 
